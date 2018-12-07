@@ -1,9 +1,12 @@
 div{
     width: 300px;
-    margin: 0 auto;
     background: aquamarine;
     border: 1px solid transparent;
     border-radius: 5px;
+    position: absolute;
+    top: calc(50% - 250px);
+    left: calc(50% - 150px);
+    border-radius: 10px;
 }
 label{
     padding-left: 20px;
