@@ -9,19 +9,19 @@
 
      
   <label>姓名</label>
-  <input type="text" placeholder="请输入姓名" #name />
+  <input type="text" placeholder="请输入姓名" #name name="name" />
   <br />
   <label>性别</label>
-  <input type="text" placeholder="请输入性别" #sex/>
+  <input type="text" placeholder="请输入性别" #sex name="sex"/>
   <br />
   <label>年龄</label>
-  <input type="text" placeholder="请输入年龄" #age/>
+  <input type="text" placeholder="请输入年龄" #age name="age"/>
   <br />
   <label>电话</label>
-  <input type="text" placeholder="请输入电话" #tel />
+  <input type="text" placeholder="请输入电话" #tel  name="tel"/>
   <br />
   <label>住址</label>
-  <input type="text" placeholder="家庭住址" #address/>
+  <input type="text" placeholder="家庭住址" #address name="name" name="address"/>
   <br />
   <!-- <button (click)="saveDate()">保存</button> -->
   <input type="submit" value="保存" (click)="saveDate(name.value,sex.value,age.value,tel.value,address.value)" />
