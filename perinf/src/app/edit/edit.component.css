@@ -1,0 +1,27 @@
+div{
+    width: 300px;
+    margin: 0 auto;
+    text-align: left;
+    border: 1px solid transparent;
+    border-radius: 5px;
+    background: rgb(37, 198, 252)
+}
+h1{
+    text-align: center
+}
+span{
+    font-size: 20px;
+    margin:20px
+}
+button{
+    width: 100px;
+    height: 30px;
+    margin-bottom: 30px;
+    position: relative;
+    left: calc(50% - 50px);
+    border-radius: 10px;
+    background: chocolate;
+    border: none;
+    outline: none;
+    color: white
+}

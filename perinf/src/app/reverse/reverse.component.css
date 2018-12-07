@@ -1,0 +1,37 @@
+div{
+    width: 300px;
+    margin: 0 auto;
+    background: aquamarine;
+    border: 1px solid transparent;
+    border-radius: 5px;
+}
+label{
+    padding-left: 20px;
+}
+div input[type="text"]{
+    width: 200px;
+    height: 20px;
+    padding-left: 10px;
+    border-radius: 5px;
+    outline: none;
+    margin-bottom: 30px;
+    margin-left: 20px;
+    border: 1px solid gray;
+    background: silver;
+}
+div input[type="button"]{
+    width: 100px;
+    height: 30px;
+}
+input[type="submit"]{
+    width: 100px;
+    height: 30px;
+    margin-bottom: 30px;
+    position: relative;
+    left: calc(50% - 50px);
+    border-radius: 10px;
+    background: gold;
+    border: none;
+    outline: none;
+    color: white
+}
