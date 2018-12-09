@@ -1,4 +1,4 @@
-div{
+.all{
     width: 300px;
     margin: 0 auto;
     background: rgb(237, 208, 190);
@@ -8,16 +8,24 @@ div{
 label{
     padding-left: 20px;
 }
-div input[type="text"]{
+input[type="text"],
+input[type="number"]{
     width: 200px;
     height: 20px;
     padding-left: 10px;
     border-radius: 5px;
-    outline: none;
     margin-bottom: 30px;
+    outline: none;
     margin-left: 20px;
     border: 1px solid gray;
     background: silver;
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
+input[type="number"]{
+  -moz-appearance: textfield;
 }
 div input[type="button"]{
     width: 100px;
@@ -33,5 +41,44 @@ input[type="submit"]{
     background: chocolate;
     border: none;
     outline: none;
-    color: white
+    /* color: white */
+}
+.ng-valid[required], .ng-valid.required{
+    border-left: 5px solid #42A948 !important; /* green */
+}
+  
+.ng-invalid:not(form){
+    border-left: 5px solid #dd7cf5 !important; /* red */
+}
+form{
+    position: relative;
+}
+.namealert{
+    position: absolute;
+    top: 0;
+    left: 24%;
+}
+.telalert{
+    position: absolute;
+    top: 156px;
+    left: 24%;
+}
+.addressalert{
+    position: absolute;
+    top: 210px;
+    left: 24%;
+}
+.alert-danger div{
+    width: 215px;
+    text-align: center;
+    background: #CC0000;
+    border-radius: 0;
+    position: absolute;
+    top: 22px;
+    color: white;
+    font-size: 12px;
+}
+input[type='radio']{
+    margin-bottom: 30px;
+    margin-left: 20px;
 }
