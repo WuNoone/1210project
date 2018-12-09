@@ -38,3 +38,7 @@ input[type="submit"]{
     outline: none;
     color: white
 }
+input[type='radio']{
+    margin-bottom: 30px;
+    margin-left: 20px;
+}
