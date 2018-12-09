@@ -5,7 +5,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./reverse.component.css']
 })
 export class ReverseComponent implements OnInit {
-  data = {};
+  public data = {
+    name: '',
+    sex: '',
+    age: '',
+    tel: '',
+    address: '',
+  };
   constructor() { }
 
   ngOnInit() {
@@ -14,11 +20,11 @@ export class ReverseComponent implements OnInit {
     this.data = userEntity;
   }
   saveDate(name: string, sex: string, age: number, tel: number, address: string): void {
-    const r = confirm('是否保存？');
-    if ( r === true) {
+    const whetherSave = confirm('是否保存？');
+    if ( whetherSave === true) {
       const userInformation = {
         name: name,
-        sex: sex,
+        sex: this.data.sex,
         age: age,
         tel: tel,
         address: address,
