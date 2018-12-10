@@ -4,7 +4,10 @@ div{
     text-align: left;
     border: 1px solid transparent;
     border-radius: 5px;
-    background: rgb(37, 198, 252)
+    background: rgb(37, 198, 252);
+    position: absolute;
+    top: calc(50% - 200px);
+    left: calc(50% - 150px)
 }
 h1{
     text-align: center

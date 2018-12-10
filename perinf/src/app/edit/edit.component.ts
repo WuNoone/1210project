@@ -18,6 +18,5 @@ export class EditComponent implements OnInit {
     this.firstdata.fir = false;
     this.firstdata.ed = false;
     this.firstdata.re = true;
-    console.log(this.firstdata.fir);
   }
 }

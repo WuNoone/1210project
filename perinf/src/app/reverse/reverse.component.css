@@ -1,14 +1,18 @@
-div{
+.all{
     width: 300px;
-    margin: 0 auto;
     background: aquamarine;
     border: 1px solid transparent;
     border-radius: 5px;
+    position: absolute;
+    top: calc(50% - 250px);
+    left: calc(50% - 150px);
+    border-radius: 10px;
 }
 label{
     padding-left: 20px;
 }
-div input[type="text"]{
+input[type="text"],
+input[type="number"]{
     width: 200px;
     height: 20px;
     padding-left: 10px;
@@ -19,19 +23,55 @@ div input[type="text"]{
     border: 1px solid gray;
     background: silver;
 }
-div input[type="button"]{
-    width: 100px;
-    height: 30px;
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
 }
 input[type="submit"]{
     width: 100px;
     height: 30px;
     margin-bottom: 30px;
     position: relative;
-    left: calc(50% - 50px);
+    left: calc(50% - 100px);
     border-radius: 10px;
     background: gold;
     border: none;
     outline: none;
-    color: white
+    cursor: pointer;
+    margin-right: 20px;
+}
+input[type='radio']{
+    margin-bottom: 30px;
+    margin-left: 20px;
+}
+.ng-valid[required], .ng-valid.required{
+    border-left: 5px solid #42A948 !important; /* green */
+}
+.ng-invalid:not(form){
+    border-left: 5px solid #dd7cf5 !important; /* red */
+}
+.namealert{
+    position: absolute;
+    top: 93px;
+    left: 24%;
+}
+.telalert{
+    position: absolute;
+    top: 254px;
+    left: 24%;
+}
+.addressalert{
+    position: absolute;
+    top: 310px;
+    left: 24%;
+}
+.alert-danger div{
+    width: 215px;
+    text-align: center;
+    background: #CC0000;
+    border-radius: 0;
+    position: absolute;
+    top: 22px;
+    color: white;
+    font-size: 12px;
 }
