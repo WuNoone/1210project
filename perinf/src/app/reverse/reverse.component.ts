@@ -21,7 +21,7 @@ export class ReverseComponent implements OnInit {
     const userEntity = JSON.parse(userJsonStr);
     this.data = userEntity;
   }
-  onsavelInoutClicke(name: string, sex: string, age: number, tel: number, address: string): void {
+  OnSavelInputClick(name: string, sex: string, age: number, tel: number, address: string): void {
     const whetherSave = confirm('是否保存？');
     if ( whetherSave === true) {
       const userInformation = {
@@ -36,7 +36,7 @@ export class ReverseComponent implements OnInit {
         console.log(userInformation);
     }
   }
-  onCancelInoutClick(name: string, sex: string, age: number, tel: number, address: string): void {
+  OnCancelInputClick(name: string, sex: string, age: number, tel: number, address: string): void {
     sex = this.data.sex;
     const userJsonStr = JSON.parse(localStorage.getItem('information'));
     // tslint:disable-next-line:max-line-length
