@@ -14,7 +14,7 @@ export class FirstComponent implements OnInit {
     tel: '',
     address: '',
   };
-  saveDate(name: string, sex: string, age: number, tel: number, address: string): void {
+  OnSaveInputClick(name: string, sex: string, age: number, tel: number, address: string): void {
     const userInformation = {
       name: this.data.name,
       sex: this.data.sex,
