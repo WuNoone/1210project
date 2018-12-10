@@ -23,7 +23,7 @@
   <input type="radio" value="女" name="sex" [(ngModel)]="data.sex" />女
   <br />
   <label>年龄</label>
-  <input type="number" placeholder="请输入年龄" #age name="age" [(ngModel)]="data.age" required/>
+  <input type="number" placeholder="请输入年龄" #age name="age" [(ngModel)]="data.age" pattern="^\d+(\.{0,1}\d+){0,1}$" required/>
   <br />
   <label>电话</label>
   <input type="text" placeholder="请输入电话" #tel="ngModel" name="tel" [(ngModel)]="data.tel"
@@ -49,8 +49,7 @@
     </div>
   </div>
   <br />
-  <input type="submit" value="保存" (click)="saveDate(name.value,sex.value,age.value,tel.value,address.value)" class="btn btn-success" 
+  <input type="submit" value="保存" (click)="OnSaveInputClick(name.value,sex.value,age.value,tel.value,address.value)" class="btn btn-success" 
   [disabled]="!firstForm.form.valid"/>
-  <!-- <button type="submit" class="btn btn-success" [disabled]="!firstForm.form.valid">保存</button> -->
 </form>
 </div>
