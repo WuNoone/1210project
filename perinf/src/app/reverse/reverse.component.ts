@@ -14,7 +14,7 @@ export class ReverseComponent implements OnInit {
     tel: null,
     address: '',
   };
-  constructor(private firstdata: AppComponent) { }
+  constructor(private firstComponent: AppComponent) { }
 
   ngOnInit() {
     const userJsonStr = localStorage.getItem('information');
@@ -42,12 +42,15 @@ export class ReverseComponent implements OnInit {
     // tslint:disable-next-line:max-line-length
     if (userJsonStr.name !== name || userJsonStr.sex !== sex || userJsonStr.age !== age || userJsonStr.tel !== tel || userJsonStr.address !== address) {
       alert('数据以发生改变');
+      this.firstComponent.fir = false;
+      this.firstComponent.ed = true;
+      this.firstComponent.re = false;
     } else {
       const whetherCancelSave = confirm('是否取消保存？');
       if ( whetherCancelSave === true ) {
-        this.firstdata.fir = false;
-        this.firstdata.ed = true;
-        this.firstdata.re = false;
+        this.firstComponent.fir = false;
+        this.firstComponent.ed = true;
+        this.firstComponent.re = false;
       }
     }
   }
