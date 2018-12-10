@@ -14,7 +14,7 @@ export class EditComponent implements OnInit {
     const userEntity = JSON.parse(userJsonStr);
     this.edit = userEntity;
   }
-  reversesave(): void {
+  OnInputSaveClick(): void {
     this.firstdata.fir = false;
     this.firstdata.ed = false;
     this.firstdata.re = true;
