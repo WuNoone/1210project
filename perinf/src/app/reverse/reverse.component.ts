@@ -41,7 +41,7 @@ export class ReverseComponent implements OnInit {
     const userJsonStr = JSON.parse(localStorage.getItem('information'));
     // tslint:disable-next-line:max-line-length
     if (userJsonStr.name !== name || userJsonStr.sex !== sex || userJsonStr.age !== age || userJsonStr.tel !== tel || userJsonStr.address !== address) {
-      alert('数据以发生改变');
+      alert('数据已发生改变');
       this.firstComponent.fir = false;
       this.firstComponent.ed = true;
       this.firstComponent.re = false;
