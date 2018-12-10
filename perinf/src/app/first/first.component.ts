@@ -22,20 +22,10 @@ export class FirstComponent implements OnInit {
       tel: tel,
       address: address,
     };
-    const namevalue = (document.getElementsByName('name')[0] as HTMLInputElement).value;
-    const sexvalue = (document.getElementsByName('sex')[0] as HTMLInputElement).value;
-    const agevalue = (document.getElementsByName('age')[0] as HTMLInputElement).value;
-    const telvalue = (document.getElementsByName('tel')[0] as HTMLInputElement).value;
-    const addressvalue = (document.getElementsByName('address')[0] as HTMLInputElement).value;
-    if (namevalue === '' || sexvalue === '' || agevalue === '' || telvalue === '' || addressvalue === '') {
-      alert('内容不能为空！');
-    } else {
       location.reload();
         localStorage.setItem('information', JSON.stringify(userInformation));
         console.log(userInformation);
-    }
   }
-
   ngOnInit() {
   }
 
