@@ -21,7 +21,7 @@ export class ReverseComponent implements OnInit {
     const userEntity = JSON.parse(userJsonStr);
     this.data = userEntity;
   }
-  OnSavelInputClick(name: string, sex: string, age: number, tel: number, address: string): void {
+  OnSaveInputClick(name: string, sex: string, age: number, tel: number, address: string): void {
     const whetherSave = confirm('是否保存？');
     if ( whetherSave === true) {
       const userInformation = {
