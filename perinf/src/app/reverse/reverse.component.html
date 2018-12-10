@@ -23,7 +23,7 @@
     <input type="radio" value="女" name="sex" [(ngModel)]="data.sex" />女
     <br />
     <label>年龄</label>
-    <input type="number" placeholder="请输入年龄" #age name="age" [(ngModel)]="data.age" required id="tel" pattern="^\d+(\.{0,1}\d+){0,1}$"/>
+    <input type="number" placeholder="请输入年龄" #age name="age" [(ngModel)]="data.age" required pattern="^\d+(\.{0,1}\d+){0,1}$"/>
     <br />
     <label>电话</label>
     <input type="text" placeholder="请输入电话" #tel="ngModel" name="tel" [(ngModel)]="data.tel"
