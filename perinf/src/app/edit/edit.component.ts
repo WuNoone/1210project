@@ -7,7 +7,7 @@ import { AppComponent } from '../app.component';
 })
 export class EditComponent implements OnInit {
   edit: {};
-  constructor(private firstdata: AppComponent) { }
+  constructor(private firstComponent: AppComponent) { }
 
   ngOnInit() {
     const userJsonStr = localStorage.getItem('information');
@@ -15,8 +15,8 @@ export class EditComponent implements OnInit {
     this.edit = userEntity;
   }
   OnInputSaveClick(): void {
-    this.firstdata.fir = false;
-    this.firstdata.ed = false;
-    this.firstdata.re = true;
+    this.firstComponent.fir = false;
+    this.firstComponent.ed = false;
+    this.firstComponent.re = true;
   }
 }
