@@ -4,7 +4,7 @@ div{
     text-align: left;
     border: 1px solid transparent;
     border-radius: 5px;
-    background: rgb(37, 198, 252);
+    background: #0097A7;
     position: absolute;
     top: calc(50% - 200px);
     left: calc(50% - 150px)
@@ -14,7 +14,8 @@ h1{
 }
 span{
     font-size: 20px;
-    margin:20px
+    margin:20px;
+    color:#E91E63;
 }
 button{
     width: 100px;
@@ -23,8 +24,10 @@ button{
     position: relative;
     left: calc(50% - 50px);
     border-radius: 10px;
-    background: chocolate;
+    background: #FF5722;
+    margin-top: 20px;
     border: none;
     outline: none;
-    color: white
+    color: white;
+    cursor: pointer;
 }
