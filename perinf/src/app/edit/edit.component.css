@@ -22,7 +22,7 @@ button{
     height: 30px;
     margin-bottom: 30px;
     position: relative;
-    left: calc(50% - 50px);
+    left: calc(50% - 100px);
     border-radius: 10px;
     background: #FF5722;
     margin-top: 20px;
@@ -30,4 +30,5 @@ button{
     outline: none;
     color: white;
     cursor: pointer;
+    margin-right: 20px;
 }

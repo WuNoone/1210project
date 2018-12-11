@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { AppComponent } from '../app.component';
+import { Router } from '@angular/router';
+import { UnsaveGuard } from './reverse.guard';
 
 @Component({
   selector: 'app-reverse',
@@ -14,16 +15,14 @@ export class ReverseComponent implements OnInit {
     tel: null,
     address: '',
   };
-  constructor(private firstComponent: AppComponent) { }
-
+  constructor(private router: Router, private guard: UnsaveGuard) { }
   ngOnInit() {
+    this.guard.whether = true;
     const userJsonStr = localStorage.getItem('information');
     const userEntity = JSON.parse(userJsonStr);
     this.data = userEntity;
   }
   OnSaveInputClick(name: string, sex: string, age: number, tel: number, address: string): void {
-    const whetherSave = confirm('是否保存？');
-    if ( whetherSave === true) {
       const userInformation = {
         name: name,
         sex: this.data.sex,
@@ -31,27 +30,20 @@ export class ReverseComponent implements OnInit {
         tel: tel,
         address: address,
       };
-      location.reload();
         localStorage.setItem('information', JSON.stringify(userInformation));
         console.log(userInformation);
-    }
+        this.guard.whether = false;
+        this.router.navigate(['edit']);
   }
   OnCancelInputClick(name: string, sex: string, age: number, tel: number, address: string): void {
     sex = this.data.sex;
     const userJsonStr = JSON.parse(localStorage.getItem('information'));
     // tslint:disable-next-line:max-line-length
     if (userJsonStr.name !== name || userJsonStr.sex !== sex || userJsonStr.age !== age || userJsonStr.tel !== tel || userJsonStr.address !== address) {
-      alert('数据已发生改变');
-      this.firstComponent.fir = false;
-      this.firstComponent.ed = true;
-      this.firstComponent.re = false;
+      this.router.navigate(['edit']);
     } else {
-      const whetherCancelSave = confirm('是否取消保存？');
-      if ( whetherCancelSave === true ) {
-        this.firstComponent.fir = false;
-        this.firstComponent.ed = true;
-        this.firstComponent.re = false;
+      this.router.navigate(['edit']);
+      this.guard.whether = true;
       }
     }
-  }
 }
