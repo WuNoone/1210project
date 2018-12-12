@@ -1,0 +1,32 @@
+.all{
+    width: 600px;
+    margin: 0 auto;
+}
+.left,
+.right{
+    width: 300px;
+    height: 800px;
+    margin: 0 auto;
+    margin-top: 100px;
+    float: left;
+}
+.left{
+    background: gold;
+}
+.right{
+    background: rgb(20, 201, 186);
+}
+button{
+    color: white;
+    display: block;
+    margin: 0 auto;
+    outline: none;
+    border: none;
+    cursor: pointer;
+}
+.btn-one{
+    background: cornflowerblue;
+}
+.btn-two{
+    background: hsl(239, 78%, 61%);
+}

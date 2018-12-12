@@ -8,6 +8,8 @@ import { UnsaveGuard } from './reverse/reverse.guard';
 import { FirstActiveGuard } from './first/firstActive.guard';
 import { PerservicesService } from './services/perservices.service';
 import { PracticeComponent } from './practice/practice.component';
+import { PraOneComponent } from './practice/pra-one/pra-one.component';
+import { PraTwoComponent } from './practice/pra-two/pra-two.component';
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
@@ -15,7 +17,10 @@ const routes: Routes = [
   { path: 'edit', component: EditComponent, canActivate: [PerservicesService] },
   { path: 'first', component: FirstComponent, canActivate: [PerservicesService] },
   { path: 'reverse', component: ReverseComponent, canDeactivate: [ UnsaveGuard ], canActivate: [FirstActiveGuard]},
-  { path: 'practice', component: PracticeComponent, canActivate: [PerservicesService] },
+  { path: 'practice', component: PracticeComponent, canActivate: [PerservicesService], children:
+  [{ path: 'practiceone' , component: PraOneComponent },
+    { path: 'practicetwo' , component: PraTwoComponent },
+    { path: '', redirectTo: 'practiceone', pathMatch: 'full' }]},
 ];
 
 @NgModule({

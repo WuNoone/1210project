@@ -11,6 +11,9 @@ import { HomeComponent } from './home/home.component';
 import { UnsaveGuard } from './reverse/reverse.guard';
 import { FirstActiveGuard } from './first/firstActive.guard';
 import { PracticeComponent } from './practice/practice.component';
+import { PraOneComponent } from './practice/pra-one/pra-one.component';
+import { PraTwoComponent } from './practice/pra-two/pra-two.component';
+import { StringPiPipe } from './practice/pipes/string-pi.pipe';
 
 @NgModule({
   declarations: [
@@ -19,7 +22,10 @@ import { PracticeComponent } from './practice/practice.component';
     EditComponent,
     ReverseComponent,
     HomeComponent,
-    PracticeComponent
+    PracticeComponent,
+    PraOneComponent,
+    PraTwoComponent,
+    StringPiPipe
   ],
   imports: [
     BrowserModule,
