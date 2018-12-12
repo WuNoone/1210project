@@ -10,6 +10,7 @@ import { ReverseComponent } from './reverse/reverse.component';
 import { HomeComponent } from './home/home.component';
 import { UnsaveGuard } from './reverse/reverse.guard';
 import { FirstActiveGuard } from './first/firstActive.guard';
+import { PracticeComponent } from './practice/practice.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { FirstActiveGuard } from './first/firstActive.guard';
     FirstComponent,
     EditComponent,
     ReverseComponent,
-    HomeComponent
+    HomeComponent,
+    PracticeComponent
   ],
   imports: [
     BrowserModule,

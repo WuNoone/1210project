@@ -7,6 +7,7 @@ import { FirstActiveGuard } from '../first/firstActive.guard';
   templateUrl: './edit.component.html',
   styleUrls: ['./edit.component.css']
 })
+
 export class EditComponent implements OnInit {
   edit: {
     name: '',
@@ -15,6 +16,7 @@ export class EditComponent implements OnInit {
     tel: '',
     address: '',
   };
+
   constructor(private router: Router,
     private firstActive: FirstActiveGuard) { }
 
@@ -26,10 +28,12 @@ export class EditComponent implements OnInit {
       this.router.navigate(['first']);
     }
   }
-  OnInputSaveClick(): void {
+
+  onInputSaveClick(): void {
     this.router.navigate(['reverse']);
   }
-  OnInputNewClick(): void {
+
+  onInputNewClick(): void {
     localStorage.clear();
     // this.firstActive.build = false;
     this.router.navigate(['first']);

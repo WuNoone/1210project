@@ -7,6 +7,7 @@ import { UnsaveGuard } from './reverse.guard';
   templateUrl: './reverse.component.html',
   styleUrls: ['./reverse.component.css']
 })
+
 export class ReverseComponent implements OnInit {
   public data = {
     name: '',
@@ -15,6 +16,7 @@ export class ReverseComponent implements OnInit {
     tel: null,
     address: '',
   };
+
   constructor(private router: Router, private guard: UnsaveGuard) { }
   ngOnInit() {
     this.guard.whether = true;
@@ -22,7 +24,8 @@ export class ReverseComponent implements OnInit {
     const userEntity = JSON.parse(userJsonStr);
     this.data = userEntity;
   }
-  OnSaveInputClick(name: string, sex: string, age: number, tel: number, address: string): void {
+
+  onSaveInputClick(name: string, sex: string, age: number, tel: number, address: string): void {
       const userInformation = {
         name: name,
         sex: this.data.sex,
@@ -35,7 +38,8 @@ export class ReverseComponent implements OnInit {
         this.guard.whether = false;
         this.router.navigate(['edit']);
   }
-  OnCancelInputClick(name: string, sex: string, age: number, tel: number, address: string): void {
+
+  onCancelInputClick(name: string, sex: string, age: number, tel: number, address: string): void {
     sex = this.data.sex;
     const userJsonStr = JSON.parse(localStorage.getItem('information'));
     // tslint:disable-next-line:max-line-length

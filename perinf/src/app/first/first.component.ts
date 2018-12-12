@@ -6,6 +6,7 @@ import { Router } from '@angular/router';
   templateUrl: './first.component.html',
   styleUrls: ['./first.component.css']
 })
+
 export class FirstComponent implements OnInit {
   constructor(private router: Router) { }
   data = {
@@ -15,7 +16,8 @@ export class FirstComponent implements OnInit {
     tel: '',
     address: '',
   };
-  OnSaveInputClick(name: string, sex: string, age: number, tel: number, address: string): void {
+
+  onSaveInputClick(name: string, sex: string, age: number, tel: number, address: string): void {
     const userInformation = {
       name: this.data.name,
       sex: this.data.sex,
@@ -23,12 +25,13 @@ export class FirstComponent implements OnInit {
       tel: tel,
       address: address,
     };
-      // location.reload();
+
     const userJsonStr = localStorage.getItem('information');
     const userEntity = JSON.parse(userJsonStr);
     localStorage.setItem('information', JSON.stringify(userInformation));
     this.router.navigate(['edit']);
   }
+
   ngOnInit() {
   }
 
