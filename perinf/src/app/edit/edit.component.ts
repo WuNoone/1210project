@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { FirstActiveGuard } from '../first/firstActive.guard';
+import { AppComponent } from '../app.component';
 
 @Component({
   selector: 'app-edit',
@@ -18,7 +19,8 @@ export class EditComponent implements OnInit {
   };
 
   constructor(private router: Router,
-    private firstActive: FirstActiveGuard) { }
+    private firstActive: FirstActiveGuard,
+    private appComponent: AppComponent) { }
 
   ngOnInit() {
     const userJsonStr = localStorage.getItem('information');
@@ -37,5 +39,6 @@ export class EditComponent implements OnInit {
     localStorage.clear();
     // this.firstActive.build = false;
     this.router.navigate(['first']);
+    this.appComponent.show = true;
   }
 }

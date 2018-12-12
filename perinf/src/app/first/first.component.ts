@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { AppComponent } from '../app.component';
 
 @Component({
   selector: 'app-first',
@@ -8,7 +9,8 @@ import { Router } from '@angular/router';
 })
 
 export class FirstComponent implements OnInit {
-  constructor(private router: Router) { }
+  constructor(private router: Router,
+    private appComponent: AppComponent) { }
   data = {
     name: '',
     sex: '男',
@@ -30,6 +32,7 @@ export class FirstComponent implements OnInit {
     const userEntity = JSON.parse(userJsonStr);
     localStorage.setItem('information', JSON.stringify(userInformation));
     this.router.navigate(['edit']);
+    this.appComponent.show = false;
   }
 
   ngOnInit() {

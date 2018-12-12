@@ -2,6 +2,6 @@
 <nav>
     <a routerLink="/home">Home</a>
     <a (click)="onNavigated()">Info</a>
-    <a routerLink="/practice">练习</a>
+    <a routerLink="/practice" [class.hide]="show">练习</a>
 </nav>
 <router-outlet></router-outlet>
