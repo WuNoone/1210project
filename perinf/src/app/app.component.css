@@ -12,4 +12,6 @@ nav a{
     height: 20px;
     background: navajowhite;
     color: violet;
+    line-height: 20px;
+    cursor: pointer;
 }

@@ -31,7 +31,7 @@ export class EditComponent implements OnInit {
   }
   OnInputNewClick(): void {
     localStorage.clear();
-    this.firstActive.build = true;
+    // this.firstActive.build = false;
     this.router.navigate(['first']);
   }
 }
