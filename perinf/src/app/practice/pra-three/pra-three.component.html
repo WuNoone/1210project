@@ -1,0 +1,6 @@
+<h1>{{date | date:"yyyy年MM月dd日 HH:mm:ss"}}</h1>
+<div class="main">
+  <button (click)="threeServer.onBtnStart()" [innerHtml]="threeServer.start"></button>
+  <button (click)="threeServer.onBtnStop()" [class.hide]="threeServer.showStop">停止</button>
+  <div class="zero">{{threeServer.num}}</div>
+</div>
