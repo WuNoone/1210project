@@ -5,7 +5,11 @@ import { Injectable } from '@angular/core';
 })
 export class MomentMoodServiceService {
 
-  mood = ['喜', '怒', '哀', '乐'];
+  mmood = [];
+
+  onMomentAdd(message) {
+    this.mmood.push(message);
+  }
 
   constructor() { }
 

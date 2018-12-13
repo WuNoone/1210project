@@ -5,7 +5,8 @@ import { GlobalMoodServiceService } from '../global-mood-service.service';
 @Component({
   selector: 'app-pra-two',
   templateUrl: './pra-two.component.html',
-  styleUrls: ['./pra-two.component.css']
+  styleUrls: ['./pra-two.component.css'],
+  providers:  [ MomentMoodServiceService ]
 })
 export class PraTwoComponent implements OnInit {
 
@@ -14,22 +15,16 @@ export class PraTwoComponent implements OnInit {
     private globalServer: GlobalMoodServiceService
     ) { }
 
-  mommood = [];
-  mood = [];
-  num = 0;
   ngOnInit() {
-    this.mood = this.globalServer.nullmood;
   }
 
   onBtnGlobal() {
-    const random = Math.floor(Math.random() * 4);
-    this.mood[this.globalServer.num] = this.globalServer.gmood[random];
-    this.globalServer.num++;
+    const random = Math.floor(Math.random() * 10000);
+    this.globalServer.onGlobalAdd(random);
   }
 
   onBtnMoment() {
-    const random = Math.floor(Math.random() * 4);
-    this.mommood[this.num] = this.momentServer.mood[random];
-    this.num++;
+    const random = Math.floor(Math.random() * 10000);
+    this.momentServer.onMomentAdd(random);
   }
 }

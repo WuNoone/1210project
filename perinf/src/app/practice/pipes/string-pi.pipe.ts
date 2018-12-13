@@ -21,8 +21,9 @@ export class StringPiPipe implements PipeTransform {
     } else if (!reg.test(money)) {
       return '不符合题目要求';
     }
-
+    // 转为浮点数
     money = parseFloat(money);
+    // 如果是零元
     if (money === 0) {
       chineseStr = cnNums[0] + cnIntLast + cnInteger;
       return chineseStr;

@@ -1,13 +1,13 @@
 <div class="all">
     <div class="left">
          <button class="btn-one" (click)="onBtnMoment()">局部心情</button>
-         <ul *ngFor="let glomood of mommood">
+         <ul *ngFor="let glomood of momentServer.mmood">
                 <li>{{glomood}}</li>
         </ul>
     </div>
     <div class="right">
         <button class="btn-two" (click)="onBtnGlobal()">全局心情</button>
-        <ul *ngFor="let mommood of mood">
+        <ul *ngFor="let mommood of globalServer.gmood">
             <li>{{mommood}}</li>
         </ul>
     </div>

@@ -5,8 +5,11 @@ import { Injectable } from '@angular/core';
 })
 export class GlobalMoodServiceService {
 
-  gmood = ['喜', '怒', '哀', '乐'];
-  nullmood = [];
-  num = 0;
+  gmood = [];
+
+  onGlobalAdd(dataMessage) {
+    this.gmood.push(dataMessage);
+  }
+
   constructor() { }
 }
