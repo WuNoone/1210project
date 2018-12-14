@@ -11,6 +11,7 @@ import { PracticeComponent } from './practice/practice.component';
 import { PraOneComponent } from './practice/pra-one/pra-one.component';
 import { PraTwoComponent } from './practice/pra-two/pra-two.component';
 import { PraThreeComponent } from './practice/pra-three/pra-three.component';
+import { PraFourComponent } from './practice/pra-four/pra-four.component';
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
@@ -22,6 +23,7 @@ const routes: Routes = [
   [{ path: 'practiceone' , component: PraOneComponent },
     { path: 'practicetwo' , component: PraTwoComponent },
     { path: 'practicethree' , component: PraThreeComponent },
+    { path: 'practicefour' , component: PraFourComponent },
     { path: '', redirectTo: 'practiceone', pathMatch: 'full' }]},
 ];
 

@@ -26,7 +26,7 @@ export class EditComponent implements OnInit {
     const userJsonStr = localStorage.getItem('information');
     const userEntity = JSON.parse(userJsonStr);
     this.edit = userEntity;
-    if ( userEntity == null) {
+    if (userEntity == null) {
       this.router.navigate(['first']);
     }
   }
