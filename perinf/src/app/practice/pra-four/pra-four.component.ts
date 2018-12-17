@@ -8,14 +8,14 @@ declare var AMapUI: any;
   styleUrls: ['./pra-four.component.css']
 })
 export class PraFourComponent implements OnInit {
+  public userJsonStr = localStorage.getItem('information');
+  public userEntity = JSON.parse(this.userJsonStr);
+  public placeSearch = new AMap.PlaceSearch();
+  public infoWindow = new AMap.AdvancedInfoWindow({});
 
   constructor() { }
 
   ngOnInit() {
-    this.getMap();
-  }
-
-  getMap() {
     // tslint:disable-next-line:prefer-const
     let map = new AMap.Map('container', {
       resizeEnable: true,
@@ -26,9 +26,7 @@ export class PraFourComponent implements OnInit {
       isHotspot: true
     });
 
-    AMapUI.loadUI(['overlay/SimpleInfoWindow'], function (SimpleInfoWindow) {
-      const userJsonStr = localStorage.getItem('information');
-      const userEntity = JSON.parse(userJsonStr);
+    AMapUI.loadUI(['overlay/SimpleInfoWindow'], (SimpleInfoWindow: any) => {
       const marker = new AMap.Marker({
         map: map,
         zIndex: 9999999,
@@ -37,51 +35,45 @@ export class PraFourComponent implements OnInit {
       // tslint:disable-next-line:no-shadowed-variable
       const infoWindow = new SimpleInfoWindow({
         infoTitle: '<strong>' + '个人信息' + '</strong>',
-        infoBody: '<p class="my-desc">' + '姓名:' + userEntity.name + '</p >' +
-          '<p class="my-desc">' + '性别:' + userEntity.sex + '</p >' +
-          '<p class="my-desc">' + '年龄:' + userEntity.age + '</p >' +
-          '<p class="my-desc">' + '电话:' + userEntity.tel + '</p >' +
-          '<p class="my-desc">' + '住址:' + userEntity.address + '</p >',
+        infoBody: '<p class="my-desc">' + '姓名:' + this.userEntity.name + '</p >' +
+          '<p class="my-desc">' + '性别:' + this.userEntity.sex + '</p >' +
+          '<p class="my-desc">' + '年龄:' + this.userEntity.age + '</p >' +
+          '<p class="my-desc">' + '电话:' + this.userEntity.tel + '</p >' +
+          '<p class="my-desc">' + '住址:' + this.userEntity.address + '</p >',
 
         offset: new AMap.Pixel(0, -31)
       });
 
-      function openInfoWin() {
+      AMap.event.addListener(marker, 'click', () => {
         infoWindow.open(map, marker.getPosition());
-      }
-
-      AMap.event.addListener(marker, 'click', function () {
-        openInfoWin();
       });
-
-      openInfoWin();
     });
 
-    const placeSearch = new AMap.PlaceSearch();
-    const infoWindow = new AMap.AdvancedInfoWindow({});
-    map.on('hotspotclick', function (result) {
+    map.on('hotspotclick', (result: any) => {
       // tslint:disable-next-line:no-shadowed-variable
-      placeSearch.getDetails(result.id, function (status, result) {
+      this.placeSearch.getDetails(result.id, (status: any, result: any) => {
         if (status === 'complete' && result.info === 'OK') {
           placeSearch_CallBack(result);
         }
       });
     });
 
-    function placeSearch_CallBack(data) {
+    // tslint:disable-next-line:prefer-const
+    let placeSearch_CallBack = (data: any) => {
       const poiArr = data.poiList.pois;
       const location = poiArr[0].location;
-      infoWindow.setContent(createContent(poiArr[0]));
-      infoWindow.open(map, location);
-    }
+      this.infoWindow.setContent(createContent(poiArr[0]));
+      this.infoWindow.open(map, location);
+    };
 
-    function createContent(poi) {
+    // tslint:disable-next-line:prefer-const
+    let createContent = (poi: any) => {
       const s = [];
       s.push('<div class="info-title">' + poi.name + '</div><div class="info-content">' + '地址：' + poi.address);
       s.push('电话：' + poi.tel);
       s.push('类型：' + poi.type);
       s.push('<div>');
       return s.join('<br>');
-    }
+    };
   }
 }
