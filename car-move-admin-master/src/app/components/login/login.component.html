@@ -1,0 +1,17 @@
+<h1>后台管理系统</h1>
+<div class="all">
+  <form action="#" method="get" #firstForm="ngForm" name="angularForm">
+    <h3>用户登录</h3>
+    <label>用户名:</label>
+    <input type="text" placeholder="请输入用户名" #username name="username" [(ngModel)]="data.username"
+      required>
+    <br>
+    <label>密&nbsp;&nbsp;&nbsp;&nbsp;码:</label>
+    <input type="password" placeholder="请输入密码" #password name="password" [(ngModel)]="data.password">
+    <div *ngIf="hidden" class="erroralert">
+      用户名或密码错误
+    </div>
+    <br>
+    <button type="submit" (click)="login()">登录</button>
+  </form>
+</div>
