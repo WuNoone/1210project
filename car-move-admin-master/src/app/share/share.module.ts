@@ -19,9 +19,6 @@ import { ZEmptyPipe } from './pipes/z-empty.pipe';
 import { ZInputShareModule } from './components/z-input/z-input.share.module';
 import { NotImplementComponent } from './components/not-implement/not-implement.component';
 import { ComponentsComponent } from './components/components.component';
-import { MainComponent } from './components/main/main.component';
-import { LinksComponent } from './components/links/links.component';
-import { AdminComponent } from './components/admin/admin.component';
 
 @NgModule({
   imports: [
@@ -48,9 +45,6 @@ import { AdminComponent } from './components/admin/admin.component';
     DurationFormatHMSPipe,
     NotImplementComponent,
     ComponentsComponent,
-    MainComponent,
-    LinksComponent,
-    AdminComponent,
   ],
   exports: [
     CommonModule,

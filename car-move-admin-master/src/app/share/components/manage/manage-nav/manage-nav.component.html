@@ -1,0 +1,10 @@
+<div class="left">
+  <nz-collapse>
+    <nz-collapse-panel *ngFor="let panel of panels" [nzHeader]="panel.name" [nzActive]="panel.active" [nzDisabled]="panel.disabled">
+      <p (click)="routerLink()" [routerLink]="panel.router">{{panel.name}}</p>
+    </nz-collapse-panel>
+  </nz-collapse>
+</div>
+<div class="right">
+  <router-outlet></router-outlet>
+</div>

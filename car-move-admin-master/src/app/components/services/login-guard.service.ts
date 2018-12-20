@@ -14,7 +14,7 @@ export class LoginGuardService implements CanActivate {
     state: RouterStateSnapshot,
   ): any {
 
-    if (state.url === '/main' || state.url === '/link' || state.url === '/management') {
+    if (state.url === '/main') {
       if (localStorage.getItem('information')) {
         return true;
       } else {

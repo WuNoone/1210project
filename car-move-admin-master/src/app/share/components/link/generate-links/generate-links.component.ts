@@ -1,11 +1,14 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+
 
 @Component({
-  selector: 'app-admin',
-  templateUrl: './admin.component.html',
-  styleUrls: ['./admin.component.less']
+  selector: 'app-generate-links',
+  templateUrl: './generate-links.component.html',
+  styleUrls: ['./generate-links.component.less']
 })
-export class AdminComponent implements OnInit {
+export class GenerateLinksComponent implements OnInit {
+
   panels = [
     {
       active: true,
@@ -19,7 +22,7 @@ export class AdminComponent implements OnInit {
     }
   ];
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit() {
   }

@@ -1,0 +1,33 @@
+<div class="right">
+  <div class="right-Breadcrumb">
+    <nz-breadcrumb>
+      <nz-breadcrumb-item>
+        <p class="right-font">生成链接历史记录 1.1.0 albert 1.1.0 albert</p>
+      </nz-breadcrumb-item>
+    </nz-breadcrumb>
+  </div>
+  <div class="bottom">
+    <p class="history">生成链接历史记录</p>
+    <div class="link">
+      <nz-table #filterTable #borderedTable nzBordered [nzData]="displayData">
+        <thead (nzSortChange)="sort($event)" nzSingleSort>
+          <tr>
+            <th nzShowSort nzSortKey="name" [nzFilters]="nameList" (nzFilterChange)="filter($event,searchAddress)">日期</th>
+            <th nzShowSort nzSortKey="age">事件</th>
+            <th nzShowSort nzSortKey="address" [nzFilterMultiple]="false" [nzFilters]="addressList" (nzFilterChange)="filter(listOfSearchName,$event)">数量</th>
+            <th nzShowSort nzSortKey="age">操作</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let data of filterTable.data">
+            <td>{{data.date}}</td>
+            <td>{{data.time}}</td>
+            <td>{{data.number}}</td>
+            <td>{{data.operation}}</td>
+          </tr>
+        </tbody>
+      </nz-table>
+
+    </div>
+  </div>
+</div>

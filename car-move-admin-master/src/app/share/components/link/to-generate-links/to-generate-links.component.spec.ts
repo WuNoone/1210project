@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { MainComponent } from './main.component';
+import { ToGenerateLinksComponent } from './to-generate-links.component';
 
-describe('MainComponent', () => {
-  let component: MainComponent;
-  let fixture: ComponentFixture<MainComponent>;
+describe('ToGenerateLinksComponent', () => {
+  let component: ToGenerateLinksComponent;
+  let fixture: ComponentFixture<ToGenerateLinksComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ MainComponent ]
+      declarations: [ ToGenerateLinksComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(MainComponent);
+    fixture = TestBed.createComponent(ToGenerateLinksComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

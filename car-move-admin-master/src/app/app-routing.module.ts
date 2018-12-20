@@ -5,29 +5,35 @@ import { NotImplementComponent } from './share/components/not-implement/not-impl
 import { LoginComponent } from './components/login/login.component';
 import { LoginGuardService } from '../app/components/services/login-guard.service';
 import { DefaultGuardService } from '../app/components/services/default-guard.service';
-import { MainComponent } from './share/components/main/main.component';
-import { LinksComponent } from './share/components/links/links.component';
-import { AdminComponent } from './share/components/admin/admin.component';
 
 const routes: Routes = [
   { path: 'login', component: LoginComponent, canActivate: [LoginGuardService] },
   { path: '', component: LoginComponent, pathMatch: 'full', canActivate: [DefaultGuardService] },
   {
-    path: '', component: AppComponent, children: [
-      { path: '', redirectTo: '/main', pathMatch: 'full' },
+    path: 'main', component: AppComponent, children: [
+      { path: '', redirectTo: 'main-nav/main-home', pathMatch: 'full' },
       {
-        path: 'main',
-        component: MainComponent, canActivate: [LoginGuardService]
+        path: 'main-nav',
+        loadChildren: './share/components/main/main.module#MainModule'
       },
+    ]
+  },
+  {
+    path: 'link', component: AppComponent, children: [
+      { path: '', redirectTo: 'generate-nav/links/links', pathMatch: 'full' },
       {
-        path: 'link',
-        component: LinksComponent, canActivate: [LoginGuardService]
+        path: 'generate-nav/links',
+        loadChildren: './share/components/link/link.module#LinkModule'
       },
+    ]
+  },
+  {
+    path: 'management', component: AppComponent, children: [
+      { path: '', redirectTo: 'manage-nav', pathMatch: 'full' },
       {
-        path: 'management',
-        component: AdminComponent, canActivate: [LoginGuardService]
+        path: 'manage-nav',
+        loadChildren: './share/components/manage/manage.module#ManageModule'
       },
-      { path: '**', redirectTo: '/main/home', pathMatch: 'full' },
     ]
   }];
 

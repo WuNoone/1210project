@@ -1,0 +1,19 @@
+<div class="left">
+  <nz-collapse nzAccordion>
+    <nz-collapse-panel *ngFor="let panel of panels" [nzHeader]="panel.name" [nzActive]="panel.active">
+      <p routerLink="main-home" class="links" [routerLinkActive]="['btn-active']">{{panel.name}}</p>
+    </nz-collapse-panel>
+  </nz-collapse>
+</div>
+<div class="right">
+  <div class="right-Breadcrumb">
+    <nz-breadcrumb>
+      <nz-breadcrumb-item>
+        <p class="right-font">首页内容 1.1.0 albert</p>
+      </nz-breadcrumb-item>
+    </nz-breadcrumb>
+  </div>
+  <div class="right-text">
+    <router-outlet></router-outlet>
+  </div>
+</div>
