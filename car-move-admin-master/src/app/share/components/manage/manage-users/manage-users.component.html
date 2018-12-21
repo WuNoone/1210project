@@ -1,3 +1,50 @@
-<p>
-  manage-users works!
-</p>
+<div class="right">
+  <div class="right-Breadcrumb">
+    <nz-breadcrumb>
+      <nz-breadcrumb-item>
+        <p class="right-font">链接管理1.1.0 albert</p>
+      </nz-breadcrumb-item>
+    </nz-breadcrumb>
+  </div>
+  <div class="bottom">
+    <p class="history">数据筛选</p>
+    <div class="link data-screen">
+      <span>手机号:</span>
+      <input type="text" class="text" placeholder="拼团编号">
+      <span>车牌号:</span>
+      <input type="text" class="text" placeholder="全部">
+      <span>服务状态:</span>
+      <select class="select">
+        <option>黑名单</option>
+        <option>正常</option>
+      </select>
+      <br>
+      <nz-range-picker [nzFormat]="dateFormat"></nz-range-picker>
+      <input type="button" value="查询" class="query" />
+      <input type="button" value="重置" class="reset" />
+    </div>
+  </div>
+  <div class="data-list">
+    <p class="history">数据列表</p>
+    <nz-table #borderedTable nzBordered [nzData]="dataSet">
+      <thead>
+        <tr>
+          <th>绑定时间</th>
+          <th>手机号</th>
+          <th>车牌号</th>
+          <th>服务状态</th>
+          <th>操作</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let data of borderedTable.data">
+          <td>{{data.time}}</td>
+          <td>{{data.tel}}</td>
+          <td>{{data.licensePlate}}</td>
+          <td>{{data.serviceState}}</td>
+          <td><span (click)="joinMove(data.id)" class="textJoin">{{data.joinMove}}</span></td>
+        </tr>
+      </tbody>
+    </nz-table>
+  </div>
+</div>

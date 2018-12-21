@@ -11,7 +11,7 @@
     <div class="link">
       <nz-table #filterTable #borderedTable nzBordered [nzData]="displayData">
         <thead (nzSortChange)="sort($event)" nzSingleSort>
-          <tr>
+          <tr id="thead">
             <th nzShowSort nzSortKey="name" [nzFilters]="nameList" (nzFilterChange)="filter($event,searchAddress)">日期</th>
             <th nzShowSort nzSortKey="age">事件</th>
             <th nzShowSort nzSortKey="address" [nzFilterMultiple]="false" [nzFilters]="addressList" (nzFilterChange)="filter(listOfSearchName,$event)">数量</th>

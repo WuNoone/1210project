@@ -1,0 +1,28 @@
+<div class="right">
+  <div class="right-Breadcrumb">
+    <nz-breadcrumb>
+      <nz-breadcrumb-item>
+        <p class="right-font">编辑链接1.1.0 albert</p>
+      </nz-breadcrumb-item>
+    </nz-breadcrumb>
+  </div>
+  <div class="bottom">
+    <p class="edit">编辑虾客</p>
+    <div class="data-form">
+      <span class="right-span">链接:</span>
+      <input type="text" [(ngModel)]="link" class="link" readonly>
+      <br>
+      <span class="left-span">*</span><span class="right-span">手机号码:</span>
+      <input type="text" [(ngModel)]="tel">
+      <br>
+      <span class="left-span">*</span><span class="right-span">车牌号:</span>
+      <input type="text" [(ngModel)]="licensePlate">
+      <br>
+    </div>
+    <div class="state">
+      <span>启用状态:</span>
+      <nz-switch [(ngModel)]="state"></nz-switch>
+    </div>
+    <input type="button" value="提交" class="submit" (click)="onBtnSave()" [routerLink]="['/management/manage-nav/manage-links']"/>
+  </div>
+</div>

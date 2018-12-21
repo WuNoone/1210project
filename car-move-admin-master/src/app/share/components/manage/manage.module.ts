@@ -7,6 +7,8 @@ import { ManageLinksComponent } from './manage-links/manage-links.component';
 import { ManageUsersComponent } from './manage-users/manage-users.component';
 import { ShareModule } from '../../share.module';
 import { NgZorroAntdModule } from 'ng-zorro-antd';
+import { ManageSeeComponent } from './manage-see/manage-see.component';
+import { ManageEditComponent } from './manage-edit/manage-edit.component';
 
 @NgModule({
   imports: [
@@ -15,6 +17,6 @@ import { NgZorroAntdModule } from 'ng-zorro-antd';
     ShareModule,
     NgZorroAntdModule
   ],
-  declarations: [ManageNavComponent, ManageLinksComponent, ManageUsersComponent]
+  declarations: [ManageNavComponent, ManageLinksComponent, ManageUsersComponent, ManageSeeComponent, ManageEditComponent]
 })
 export class ManageModule { }

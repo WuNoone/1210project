@@ -14,7 +14,10 @@ export class LoginGuardService implements CanActivate {
     state: RouterStateSnapshot,
   ): any {
 
-    if (state.url === '/main') {
+    // tslint:disable-next-line:max-line-length
+    if (state.url === '/main/main-nav/main-home' || state.url === '/link/generate-nav/links/links' ||
+    state.url === '/link/generate-nav/links/links-history' || state.url === '/link/generate-nav/links/links' ||
+    state.url === '/management/manage-nav/manage-users') {
       if (localStorage.getItem('information')) {
         return true;
       } else {
