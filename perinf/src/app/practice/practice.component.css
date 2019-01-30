@@ -1,6 +1,6 @@
 nav{
     width:400px;
-    margin: 20px auto 20px;
+    margin: 10px auto 10px;
     overflow: hidden;
 }
 nav a{
@@ -8,6 +8,6 @@ nav a{
     text-decoration: none;
     font-size: 20px;
     color: seashell;
-    margin: 20px;
+    margin: 10px;
     float: left;
 }

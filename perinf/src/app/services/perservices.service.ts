@@ -13,15 +13,15 @@ export class PerservicesService implements CanActivate {
 
     if (state.url === '/first') {
       if (localStorage.getItem('information')) {
-          return false;
+        return false;
       } else {
         return true;
       }
     } else if (state.url === '/edit' || state.url === '/reverse') {
       if (localStorage.getItem('information')) {
-          return true;
+        return true;
       } else {
-          return false;
+        return false;
       }
     }
 

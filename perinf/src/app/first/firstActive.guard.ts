@@ -5,7 +5,7 @@ export class FirstActiveGuard implements CanActivate {
     canActivate(
         next: ActivatedRouteSnapshot,
         state: RouterStateSnapshot): boolean {
-        if (this.build  === true ) {
+        if (this.build === true) {
             console.log('a');
             // return window.confirm('确认新建');
             return true;
@@ -13,5 +13,5 @@ export class FirstActiveGuard implements CanActivate {
             console.log('a');
             return true;
         }
-      }
+    }
 }

@@ -16,6 +16,8 @@ import { PraTwoComponent } from './practice/pra-two/pra-two.component';
 import { StringPiPipe } from './practice/pipes/string-pi.pipe';
 import { PraThreeComponent } from './practice/pra-three/pra-three.component';
 import { PraFourComponent } from './practice/pra-four/pra-four.component';
+import { PraFiveComponent } from './practice/pra-five/pra-five.component';
+import { SComponent } from './s/s.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +31,9 @@ import { PraFourComponent } from './practice/pra-four/pra-four.component';
     PraTwoComponent,
     StringPiPipe,
     PraThreeComponent,
-    PraFourComponent
+    PraFourComponent,
+    PraFiveComponent,
+    SComponent
   ],
   imports: [
     BrowserModule,

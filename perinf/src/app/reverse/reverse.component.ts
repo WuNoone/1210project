@@ -26,17 +26,17 @@ export class ReverseComponent implements OnInit {
   }
 
   onSaveInputClick(name: string, sex: string, age: number, tel: number, address: string): void {
-      const userInformation = {
-        name: name,
-        sex: this.data.sex,
-        age: age,
-        tel: tel,
-        address: address,
-      };
-        localStorage.setItem('information', JSON.stringify(userInformation));
-        console.log(userInformation);
-        this.guard.whether = false;
-        this.router.navigate(['edit']);
+    const userInformation = {
+      name: name,
+      sex: this.data.sex,
+      age: age,
+      tel: tel,
+      address: address,
+    };
+    localStorage.setItem('information', JSON.stringify(userInformation));
+    console.log(userInformation);
+    this.guard.whether = false;
+    this.router.navigate(['edit']);
   }
 
   onCancelInputClick(name: string, sex: string, age: number, tel: number, address: string): void {
@@ -48,6 +48,6 @@ export class ReverseComponent implements OnInit {
     } else {
       this.router.navigate(['edit']);
       this.guard.whether = true;
-      }
     }
+  }
 }
